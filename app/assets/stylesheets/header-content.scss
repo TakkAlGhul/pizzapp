@@ -1,0 +1,45 @@
+.header {
+    height: 500px;
+    padding-top: 70px;
+    min-width: 100%;
+    background-image: url("pizza-3007395_1280.jpg");
+    opacity: 0.8;
+    height: 600px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+   
+    
+    &-content {
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+    }
+
+        
+    
+        &-heading {
+            font-size: 100px;
+
+        }
+
+        &-subheading {
+            margin: auto;
+        }
+
+        &-btn__post {
+            display: flex;
+            align-items: center;
+            flex-direction: column; /* 変更なし */
+            justify-content: center; /* 変更なし */
+            border: 0 ; /* 見た目用 */
+            border-radius: 50px; /* 見た目用 */
+            background-color: coral; /* 見た目用 */
+            box-shadow: 0px 1px 1px darkmagenta; /* 見た目用 */
+            width: 300px;
+            height: 70px;
+            cursor: pointer;
+            margin: 100px auto 0;
+            font-size: 20px;
+        }
+}
