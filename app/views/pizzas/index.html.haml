@@ -1,7 +1,8 @@
 %body
   %nav.navbar
     .container
-      .navbar-title PIZZAPP! 
+      .navbar-title 
+        = link_to 'PIZZER', "/" 
       %ul.navbar-list
         %li.navbar-list__item
           = link_to 'Sign Up'
@@ -17,7 +18,7 @@
       .header-btn__post
         = link_to 'Watch Reviews', "#"
 
-  -# .rankings
+  .rankings
   -#   %h2.ranking-title The Top 10 best pizzas
   -#   = @ranking.each_with_index |pizza, i| do
   -#     <li data-cinema-id="346394">

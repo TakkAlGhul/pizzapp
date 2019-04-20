@@ -8,6 +8,13 @@
     display: flex; 
     justify-content: center; 
     align-items: center;
+    padding-bottom: 30px;
+
+    .contents {
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 10px 20px;
+
+    }
    
     
     &-content {
