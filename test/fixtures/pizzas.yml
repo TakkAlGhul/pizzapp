@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  menu: MyString
+  image: MyText
+  shops_id: 1
+  calorie: 1
+  price: 1
+
+two:
+  menu: MyString
+  image: MyText
+  shops_id: 1
+  calorie: 1
+  price: 1
