@@ -1,9 +1,18 @@
 class PizzasController < ApplicationController
   def index
-    @pizzas = Pizza.order('id ASC').limit(15)
+    @pizzas = Pizza.all
   end
 
   def show
-    @pizzas = Pizza.find(params[:id])
+    @pizza = Pizza.find(params[:id])  
+    @reviews = @pizza.reviews.includes(:user).order('created_at DESC')
+    @review = Review.new
+  end
+
+
+
+private
+  def pizza_params
+    params.permit(:image, :menu)
   end
 end

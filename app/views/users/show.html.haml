@@ -1,0 +1,8 @@
+= render partial: 'pizzas/navbar'
+
+.user
+  .user-content_left
+    = image_tag( current_user.avatar.url, class: 'user-avatar') 
+    .user_name=current_user.name
+
+  

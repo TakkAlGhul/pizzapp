@@ -1,36 +1,32 @@
-%body
-  %nav.navbar
-    .container
-      .navbar-title 
-        = link_to 'PIZZER', "/" 
-      %ul.navbar-list
-        %li.navbar-list__item
-          = link_to 'Sign Up'
-        %li.navbar-list__item
-          = link_to 'Log In'
-  .header
+= render partial: 'navbar'
+.header
 
-    .header-content
-      .contents
-        %h1.header-heading Find Your Best
-        %h2.header-subheading & Share Your Best
+  .header-content
+    .contents__text
+      %h1.header-heading Find Your Best
+      %h2.header-subheading & Share Your Best
 
-      .header-btn__post
-        = link_to 'Watch Reviews', "#"
+    -# .header-btn__post
+    -#   = link_to 'Watch Reviews', "/reviews/new", method: :post 
+.thumnails
+  %ul.thumnail.listview
+  - @pizzas.each do |pizza|
+    %li.thumnail.listview-products
+      = link_to pizza_path( pizza.id ), method: :get do
+        = image_tag( pizza.image, class: 'thumnail-pizza', alt: pizza.menu )             
+        .thumnail-title=pizza.menu 
 
-  .rankings
-  -#   %h2.ranking-title The Top 10 best pizzas
-  -#   = @ranking.each_with_index |pizza, i| do
-  -#     <li data-cinema-id="346394">
-  -#               <a href="/products/<%= product.id %>">
-  -#                 <div class="box">
-  -#                   <div class="box__cell w40 align-center">
-  -#                     <p class="label bgcolor-gray-lighter align-center">
-  -#                       <%= i %>
-  -#                     </p>
-  -#                   </div>
-  -#                   <div class="box__cell pl1em">
-  -#                     <p class="text-xsmall no-space">
-  -#                       <%= product.title %>
-  -#                     </p>
-  -#                     <img src="<%= product.image_url %>" alt="">
+.footer
+  %ul.links
+    %li.links-github
+      = link_to 'https://github.com/TakkAlGhul/pizzapp' do
+        %i.fab.fa-github
+    %li.links-insta
+      = link_to 'https://github.com/TakkAlGhul/pizzapp' do
+        %i.fab.fa-instagram
+    %li.links-facebook
+      = link_to 'https://github.com/TakkAlGhul/pizzapp' do
+        %i.fab.fa-facebook
+  .copy
+    ©Copyright 2019 Takuro Yakubo
+               

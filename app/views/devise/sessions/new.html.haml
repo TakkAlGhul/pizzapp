@@ -1,0 +1,25 @@
+.contents
+  .main_cnt_wrapper
+    .yjContentsBody
+      .yjContainer
+        .form_box
+          %h2
+            Pizzer
+            %span ログイン
+          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            .field
+              = f.email_field :email, autofocus: true, class: 'field-input', :placeholder => 'メールアドレスを入力'
+              %br/
+              = f.password_field :password, autocomplete: "off", class: 'field-input', :placeholder => 'パスワードを入力'
+              %br/
+              - if devise_mapping.rememberable?
+                .col-xs-6
+                  = f.label :パスワードを記憶
+                  = f.check_box :remember_me   
+              .submit
+              = f.submit 'ログイン', class: 'submit-btn'
+            .row
+              .col-xs-6 パスワードを忘れましたか？
+          .more_link_box
+            %strong まだアカウントを持っていませんか？
+            = render "devise/shared/links"

@@ -1,0 +1,36 @@
+= render partial: 'navbar'
+.details
+  = link_to image_tag( @pizza.image, class: 'detail-image'), '#'
+  %ul.detail-info
+    %li.detail-info__title 
+      = @pizza.menu
+    %li.detail-info__price
+      価格: ¥#{  @pizza.price } 
+    %li.detail-info__calorie
+      カロリー: #{ @pizza.calorie }kcal
+    -# %li.rate-stars
+    -#   = @pizza.reviews.rate
+    .review-btn{data: {'target': 'write'}} 
+      レビューを書く
+
+.modal_overlay
+.posts
+  .post
+    = form_for [@pizza, @review], html: ({ id: 'new_review' })do |f| 
+      = f.text_area :text, class: "post_text", placeholder: "write review"
+      = f.submit 'post', class: "post_btn"
+    .post_close 
+      &times;
+
+.reviews
+  %h2.reviews-title ＜REVIEWS＞
+  -if @reviews
+    - @reviews.each do |review| 
+      .review
+        .review-user
+          = image_tag( review.user.avatar.url, class: "review-user__avatar" )
+        .review-field
+          .review-field__name
+            = review.user.name
+          .review-field__text
+            = review.text 
