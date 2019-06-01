@@ -1,0 +1,42 @@
+.contents
+  .main_cnt_wrapper
+    .yjContentsBody
+      .yjContainer
+        .form_box
+          %h2
+            Pizzer
+            %span 新規登録
+          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            = devise_error_messages!
+            .field
+              .field-label
+                = f.label :name
+              .field-input
+                = f.text_field :name, autofocus: true, class: 'field-input'
+              .label
+                = f.label :email
+              .field-input
+                = f.email_field :email, autofocus: true, class: 'field-input', :placeholder => 'メールアドレスを入力'
+              .label
+                = f.label :password
+                - if @validatable
+                  %i
+                    (#{@minimum_password_length} characters minimum)
+                %br/
+                = f.password_field :password, autocomplete: "off", class: 'field-input', :placeholder => 'パスワードを入力'
+              .label
+                = f.label :password_confirmation
+                %br/
+              .field-input 
+                = f.password_field :password_confirmation, autocomplete: "off", class: 'field-input', :placeholder => 'パスワードを入力（確認）'
+              .label
+                = f.label :avatar, class: 'avatar-label' do
+                  %p アバターを追加
+                  = fa_icon "image"
+                  = f.file_field :avatar, class: 'hidden'  
+              .submit
+                .actions
+                  = f.submit class: 'submit-btn' 
+              .more_link_box
+                %strong すでにアカウントを持っていますか？
+                = render "devise/shared/links"

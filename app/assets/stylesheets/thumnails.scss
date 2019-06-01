@@ -1,0 +1,36 @@
+.thumnails {
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    min-height: 650px;
+    width: 100vw;
+    list-style: none;
+    display: inline-flex;
+    flex-wrap: wrap;
+    padding-bottom: 130px;
+    font-weight: bold;
+    
+    
+    .thumnail {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+
+
+
+        &-pizza {
+            width: 300px;
+            height: 200px;
+            margin: 100px 50px 10px;
+            border: 2px #171a1d solid;
+            border-radius: 7px;
+        }
+
+        &-title {
+            border-radius: 50px; 
+            color: #fff;
+            font-size: 20px;
+        }
+        
+    }          
+}

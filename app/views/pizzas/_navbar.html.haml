@@ -1,0 +1,18 @@
+%nav.navbar
+  .container
+    = fa_icon "pizza-slice"
+    .navbar-title
+      = link_to 'PIZZA BASE', root_path, method: :get
+      
+       
+    %ul.navbar-list
+    - if user_signed_in?
+      %li.navbar-list__item 
+        = link_to current_user.name, "/users/=current_user.id"
+      %li.navbar-list__item 
+        = link_to 'Log Out', destroy_user_session_path, method: :delete
+    - else
+      %li.navbar-list__item
+        = link_to 'Sign Up', new_user_registration_path, class: 'post'
+      %li.navbar-list__item
+        = link_to 'Log In', new_user_session_path, class: 'post'
